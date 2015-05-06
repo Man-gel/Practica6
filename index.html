@@ -3,25 +3,102 @@
   <head>
   <meta charset="utf-8">
   <title>Pr&aacute;ctica con componentes de jQuery</title>
-  <link rel="stylesheet" href="/home/Man-gel/Descargas/jquery-ui-1.11.4.custom/jquery-ui.css">
-  <script src="/home/Man-gel/Descargas/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
-  <script src="/home/Man-gel/Descargas/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/jquery-ui-1.11.4.custom/jquery-ui.css">
+  <script src="/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+  <script src="/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
   <link rel="stylesheet" href="http:/resources/demos/style.css">
   <script>
-  $(function() {
-    $( "#tabs" ).tabs();
-  });
+    $(function() {
+      $( "#tabs" ).tabs();
+    });
+    $(function() {
+    var availableTags = [
+      "Acer",
+      "ADATA",
+      "Apple",
+      "ASUS",
+      "BenQ",
+      "BlackBerry",
+      "FoxCom",
+      "HP",
+      "IBM",
+      "Intel",           
+      "KINGSTON",
+      "LANIX",
+      "LG",
+      "Motorola",
+      "Nokia",
+      "SAMSUNG",
+      "SONY"      
+    ];
+    $( "#ac_empresa" ).autocomplete({
+      source: availableTags
+    });
+    });
+    $(function() {
+    var availableTags = [
+      "Desktop",
+      "Disco Duro",
+      "Disco Duro Estado Sólido",
+      "Memoria RAM",
+      "Memoria SD",
+      "Memoria Flash USB",
+      "Mouse",
+      "Portatil",
+      "Tablet",
+      "Teclado"
+    ];
+    $( ".autocomplete1" ).autocomplete({
+      source: availableTags
+    });
+    });
+    $(function() {
+    var availableTags = [
+      "Altavoces",
+      "Audifonos",
+      "Camara WEB",
+      "Joystick",
+      "Microfono",
+      "Multifuncional",
+      "Proyector"
+    ];
+    $( ".autocomplete2" ).autocomplete({
+      source: availableTags
+    });
+    });
+    $(function() {
+    $( "#datepicker" ).datepicker();
+    });
   </script>
   </head>
   <body>
+    <div>
+	<label for="ac_empresa">Empresa:<br/></label>
+	<input id ="ac_empresa"><br/></label>
+	</br>
+	<p>Fecha:<br/><input type="text" id="datepicker"></p>	
+    </div>
+    <br/>
     <div id="tabs">
       <ul>
 	<li><a href="#tabs1">Tab1</a></li>
 	<li><a href="#tabs2">Tab2</a></li>
       </ul>
       <div id="tabs1">
-      </div>
+	<label for="autocomplete1">Producto 1<br/></label>
+	<input id ="autocomplete1" class="autocomplete1">
+	<br/>
+	<br/>
+	<label for="autocomplete2">Producto 2<br/></label>
+	<input id ="autocomplete2" class="autocomplete2">
+      <div>
       <div id="tabs2">
+      <label for="autocomplete3">Producto 3<br/></label>
+	<input id ="autocomplete3" class="autocomplete2">
+	<br/>
+	<br/>
+	<label for="autocomplete4">Producto 4<br/></label>
+	<input id ="autocomplete4" class="autocomplete1">
       </div>  
     </div>
   </body>
