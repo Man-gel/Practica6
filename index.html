@@ -69,6 +69,13 @@
     $(function() {
     $( "#datepicker" ).datepicker();
     });
+    $(function() {
+    $( "input[type=submit], a, button" )
+      .button()
+      .click(function( event ) {
+        event.preventDefault();
+      });
+  });
   </script>
   </head>
   <body>
@@ -91,15 +98,19 @@
 	<br/>
 	<label for="autocomplete2">Producto 2<br/></label>
 	<input id ="autocomplete2" class="autocomplete2">
-      <div>
+      </div>
       <div id="tabs2">
-      <label for="autocomplete3">Producto 3<br/></label>
-	<input id ="autocomplete3" class="autocomplete2">
+        <label for="autocomplete3">Producto 3<br/></label>
+	<input id ="autocomplete3" class="autocomplete1">
 	<br/>
 	<br/>
 	<label for="autocomplete4">Producto 4<br/></label>
-	<input id ="autocomplete4" class="autocomplete1">
+	<input id ="autocomplete4" class="autocomplete2">
       </div>  
     </div>
-  </body>
+    <br/>
+    <div>
+    <input type="submit" value="Aceptar">
+    </div>
+    </body>
 </html>
